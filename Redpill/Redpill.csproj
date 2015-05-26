@@ -72,6 +72,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\AzurePublish.pubxml" />
+    <None Include="Properties\PublishProfiles\myredpilltest - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\myredpilltest - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
