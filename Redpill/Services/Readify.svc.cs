@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel.Activation;
+using System.ServiceModel.Web;
 
 namespace Redpill.Services
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Readify : IRedPill
     {
         /// <summary>
         /// Sending my Readify token
         /// </summary>
         /// <returns>Readify token</returns>
+        [WebGet(UriTemplate = "/Token")]
         public Guid WhatIsYourToken()
         {
             return new Guid("321ba856-320d-422d-a2db-353d7b0ccd04");
@@ -26,6 +25,7 @@ namespace Redpill.Services
         /// <param name="n">Negative or positive index</param>
         /// <exception cref="ArgumentOutOfRangeException">The incoming parameter should be between -92..92</exception>
         /// <returns>The fibonacci number</returns>
+        [WebGet(UriTemplate = "/FibonacciNumber?n={n}")]
         public long FibonacciNumber(long n)
         {
             try
@@ -51,6 +51,7 @@ namespace Redpill.Services
         /// <param name="b">The second size of side</param>
         /// <param name="c">The third size of side</param>
         /// <returns>The triangle type</returns>
+        [WebInvoke(UriTemplate = "/ShapeType?a={a}&b={b}&c={c}")]
         public TriangleType WhatShapeIsThis(int a, int b, int c)
         {
             try
@@ -69,6 +70,7 @@ namespace Redpill.Services
         /// </summary>
         /// <param name="s">The list of workds</param>
         /// <returns>String with reversed words</returns>
+        [WebGet(UriTemplate = "/Reverse/{s}")]
         public string ReverseWords(string s)
         {
             try

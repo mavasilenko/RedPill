@@ -42,7 +42,7 @@ namespace Redpill.Services
     }
 
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.0")]
+    //[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.0")]
     [DataContract(Name = "TriangleType", Namespace = "http://KnockKnock.readify.net")]
     public enum TriangleType
     {
